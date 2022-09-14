@@ -1,0 +1,67 @@
+/*////////////////////////
+    Table of Contents
+    0. CSS Reset
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+/* ------------------------------- 0. CSS Reset -------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ------------------------------- 1. Global Styles -------------------------------- */
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1200px;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 1200px;
+    background-color: forestgreen;
+
+}
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgreen;
+
+}
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+/* --------------- 4.2 Introduction ------------------- */
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
