@@ -1,3 +1,13 @@
+/*Vragen voor SME*/
+/*Wat is noise texture ?*/
+/*hoe kan ik de div in de header centraliseren zonder meteen de navbar te vekloten?*/
+/*Waarom kan ik de labels in mijn form alleen harcoden op width 600px?*/
+/*Uitgerekte CSS driehoek???*/
+
+
+/*IMPORTS*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
 /*////////////////////////
     Table of Contents
     0. CSS Reset
@@ -20,48 +30,290 @@
 }
 /* ------------------------------- 1. Global Styles -------------------------------- */
 body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: white;
+}
+header {
+    color: var(--licht-grijs);
+    background: linear-gradient(-45deg, var(--paars), var(--blauw));
+
+}
+main {
+    background-color: var(--licht-grijs);
+    color: var(--zwart);
+}
+footer {
+    background-color: var(--zwart);
+    color: var(--licht-grijs);
+}
+
+button {
+    background-color: var(--roze);
+    color:  var(--licht-grijs);
+    border: none;
+    height: 50px;
+    width: fit-content;
+    padding: 0 60px 0 60px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.50);
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+h1, h2, h3, h4,h5,h6 {
+    font-family: Merriweather, serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p, a, li, label, textarea {
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+ul {
+    list-style: none
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+/* --------------- 3.1 Reusables ----------------------- */
+:root {
+    --paars: #5722CD;
+    --blauw: #4845E4;
+    --roze: #ED4385;
+    --zwart:  #0C0C0C ;
+    --licht-paars: #F2F0FF;
+    --licht-grijs: #F3F6F9;
+    --grijs:  #7A7A7A;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+body {
+    display: flex;
+    justify-content: center;
 }
 .main-container {
     display: flex;
     flex-direction: column;
     flex-basis: 1200px;
-}
-header {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 1200px;
-    background-color: forestgreen;
-
+    padding: 0px 10px 0px 10px;
 }
 main {
     display: flex;
     flex-direction: column;
-    background-color: orange;
-
 }
 
 footer {
     display: flex;
-    flex-direction: column;
-    background-color: darkgreen;
-
+    flex-direction: row;
+    justify-content: center;
 }
-/* ------------------------------- 2. Typography ----------------------------------- */
-
-/* ------------------------------- 3. Layout --------------------------------------- */
-
-/* --------------- 3.1 Reusables ----------------------- */
-
-/* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    padding: 10px;
+}
+
+nav {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav>ul {
+    display: flex;
+    flex-basis: 400px;
+    justify-content: space-between;
+}
+
+header>div {
+    /*border: #ED4385 solid;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin-bottom: 80px;
+    margin-top: 30px;
+}
+
+header > div > h1, header > div > p {
+    text-align: center;
+
+}
+
+header>img {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: top;
+}
+
 /* --------------- 4.2 Introduction ------------------- */
+#hello  {
+    display: flex;
+    justify-content: center;
+}
+#hello>div {
+    flex-basis: 650px;
+}
+#hello>div> h2, p {
+    text-align: center;
+    margin: 20px;
+}
+#hello>div>h2 {
+    color: var(--paars);
+}
+
+/* --------------- 4.3 Work ------------------- */
+#work {
+    padding: 0px 10px 0px 10px;
+}
+
+#work > article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#work > article > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    /*border: #ED4385 solid;*/
+    flex-basis: 325px;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+}
+
+#work > article > div > img {
+    width: 40px;
+}
+
+#work > article > div > p {
+    text-align: start;
+    margin:0;
+    /*border: #0C0C0C solid;*/
+}
+
+#work > article > span {
+    flex-basis: 700px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+#work > article > span > img {
+    width: 100%;
+    box-shadow: 0px 15px 15px  rgba(0, 0, 0, 0.25);
+
+}
+
+#work >article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+/* --------------- 4.4 Services ------------------- */
+#services{
+    display: flex;
+    flex-direction:  column;
+    padding: 40px;
+}
+
+#services > .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#services > .row > article {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    border: var(--paars) solid 1px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.20);
+
+
+}
+
+#services > .row > article > img {
+    height: 50px;
+    width: 50px;
+}
+
+#services > .row > article > h4 {
+    color: var(--paars);
+}
+
+/* --------------- 4.3 Form ------------------- */
+#form {
+    background: linear-gradient(-45deg, var(--paars), var(--blauw));
+    color: var(--licht-grijs) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#form > div {
+    display: flex;
+    /*border: black solid;*/
+    flex-direction: column;
+    flex-basis: 600px;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+#form > div > form {
+    display: flex;
+    /*border: green solid;*/
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#form > div >form > label {
+    display: flex;
+    /*border: yellow solid;*/
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    margin: 10px;
+}
+
+#form > div > form > label > input {
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#form > div > form > label >textarea {
+    height: 250px;
+    border-radius: 5px;
+}
+#form > div > form > label > input::placeholder {
+
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (min-width: 576px) {
+    
+}
