@@ -1,7 +1,6 @@
 /*Vragen voor SME*/
 /*Wat is noise texture ?*/
 /*hoe kan ik de div in de header centraliseren zonder meteen de navbar te vekloten?*/
-/*Waarom kan ik de labels in mijn form alleen harcoden op width 600px?*/
 /*Uitgerekte CSS driehoek???*/
 
 
@@ -120,46 +119,61 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
-    padding: 10px;
 }
 
 nav {
     /*border: #ED4385 solid;*/
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between ;
     align-items: center;
+    padding-right: 10px;
+}
+
+nav>p {
+    /*border: #ED4385 solid;*/
+    margin-left: 10px;
 }
 
 nav>ul {
+    /*border: #ED4385 solid;*/
     display: flex;
-    flex-basis: 400px;
+    flex-basis: 300px;
     justify-content: space-between;
 }
 
 header>div {
     /*border: #ED4385 solid;*/
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
 
+}
+
+header>div>div {
+    /*border: #ED4385 solid;*/
+    flex-basis: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 600px;
     margin-bottom: 80px;
     margin-top: 30px;
 }
 
-header > div > h1, header > div > p {
+header>div>div> h1, p {
     text-align: center;
-
 }
+
+header>div>div>p {
+    font-size: 18px;
+}
+
 
 header>img {
     position: absolute;
     bottom: 0px;
-    left: calc(50% - 40px);
-    width: 80px;
-    height: 80px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     object-position: top;
 }
@@ -170,7 +184,7 @@ header>img {
     justify-content: center;
 }
 #hello>div {
-    flex-basis: 650px;
+    flex-basis: 700px;
 }
 #hello>div> h2, p {
     text-align: center;
@@ -179,6 +193,11 @@ header>img {
 #hello>div>h2 {
     color: var(--paars);
 }
+
+#hello>div>p {
+    margin: 70px;
+}
+
 
 /* --------------- 4.3 Work ------------------- */
 #work {
@@ -258,7 +277,6 @@ header>img {
 
 #services > .row > article > img {
     height: 50px;
-    width: 50px;
 }
 
 #services > .row > article > h4 {
@@ -300,14 +318,14 @@ header>img {
     margin: 10px;
 }
 
-#form > div > form > label > input {
+#form > div > form > label > input, textarea {
     border-radius: 5px;
     padding: 15px;
 }
 
 #form > div > form > label >textarea {
     height: 250px;
-    border-radius: 5px;
+
 }
 #form > div > form > label > input::placeholder {
 
