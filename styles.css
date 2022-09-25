@@ -1,11 +1,17 @@
 /*Vragen voor SME*/
-/*Wat is noise texture ?*/
-/*hoe kan ik de div in de header centraliseren zonder meteen de navbar te vekloten?*/
-/*Uitgerekte CSS driehoek???*/
+
 
 
 /*IMPORTS*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
+@media screen and (max-width: 575px) {
+/*  TO DO  */
+}
+
+/*DE MEDIA QUERY VOO MOBIEL STAAT HIERBOVEN. ZODRA IK KLAAR BEN MET DIT ONTWWERP DAN VERPLAATS IK ALLES WAT BLIJFT GELDEN VOOR DE MOBIELE VERSIE NAAR DE BOVENSTAANDE MEDIA_QUERY.*/
+@media screen and (min-width: 576px) {
+
 
 /*////////////////////////
     Table of Contents
@@ -33,11 +39,11 @@ body {
 }
 header {
     color: var(--licht-grijs);
-    background: linear-gradient(-45deg, var(--paars), var(--blauw));
+    background: linear-gradient(-45deg, var(--paars), var(--blauw)), url(./assets/noise-texture.png);
+    background-blend-mode: color;
 
 }
 main {
-    background-color: var(--licht-grijs);
     color: var(--zwart);
 }
 footer {
@@ -67,10 +73,11 @@ h1 {
     font-size: 30px;
 }
 
-p, a, li, label, textarea {
+p, a, a:link, a:visited, li, label, textarea {
     font-family: Roboto, sans-serif;
     text-decoration: none;
     font-size: 15px;
+    /*z-index: 0;*/
 }
 
 ul {
@@ -80,13 +87,55 @@ ul {
 /* ------------------------------- 3. Layout --------------------------------------- */
 /* --------------- 3.1 Reusables ----------------------- */
 :root {
-    --paars: #5722CD;
-    --blauw: #4845E4;
+    --paars: rgba(87,34,205,1);
+    --blauw:  rgba(75,73,232,1);
     --roze: #ED4385;
     --zwart:  #0C0C0C ;
     --licht-paars: #F2F0FF;
     --licht-grijs: #F3F6F9;
     --grijs:  #7A7A7A;
+    --page-width: 1200px;
+}
+
+.slanted-mask-top, .slanted-mask-bottom {
+    /*border: #ED4385 solid;*/
+    position: absolute;
+    width: var(--page-width);
+    left: 0;
+}
+
+.slanted-mask-top {
+    border-top: 50px solid white;
+    border-left: var(--page-width) solid transparent; /* THIS NEEDS TO CHANGE!!!*/
+    top: 0;
+}
+
+.slanted-mask-bottom {
+    border-bottom: 50px solid white;
+    border-right: var(--page-width) solid transparent; /* THIS NEEDS TO CHANGE!!!*/
+    bottom: 0;
+}
+
+.white-text-in-background, .gray-text-in-background { /* CAN ALSO BE IMPLEMENTED AS A PDEUSO ELEMENT */
+    /*border: #ED4385 solid;*/
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0px;
+    top:0px;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-size: 400px;
+    overflow:hidden;
+}
+
+.white-text-in-background {
+    color: white;
+}
+
+.gray-text-in-background {
+    color: var(--licht-grijs);
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -97,7 +146,7 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
-    flex-basis: 1200px;
+    flex-basis: var(--page-width);
     padding: 0px 10px 0px 10px;
 }
 main {
@@ -116,6 +165,7 @@ footer {
 /* --------------- 4.1 Header ------------------------- */
 
 header {
+    /*border: #ED4385 solid;*/
     position: relative;
     display: flex;
     flex-direction: column;
@@ -140,6 +190,9 @@ nav>ul {
     flex-basis: 300px;
     justify-content: space-between;
 }
+ .navbar {
+     color: white;
+ }
 
 header>div {
     /*border: #ED4385 solid;*/
@@ -167,10 +220,11 @@ header>div>div>p {
     font-size: 18px;
 }
 
-
 header>img {
+    /*border: #ED4385 solid;*/
+
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
     left: calc(50% - 30px);
     width: 60px;
     height: 60px;
@@ -180,9 +234,11 @@ header>img {
 
 /* --------------- 4.2 Introduction ------------------- */
 #hello  {
+    position: relative;
     display: flex;
     justify-content: center;
 }
+
 #hello>div {
     flex-basis: 700px;
 }
@@ -200,19 +256,29 @@ header>img {
 
 
 /* --------------- 4.3 Work ------------------- */
-#work {
-    padding: 0px 10px 0px 10px;
+.work {
+    /*border: #ED4385 solid;*/
+    position:relative;
+    padding: 150px 10px 150px 10px;
+    background-color: var(--licht-grijs);
+    z-index: -2;
 }
 
-#work > article {
+.section-content {
+    /*z-index: 0;*/
+}
+
+.section-content > article {
+    /*border: #ED4385 solid;*/
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-#work > article > div {
+.section-content > article > div {
+    /*border: #ED4385 solid;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -225,33 +291,53 @@ header>img {
     margin-bottom: 100px;
 }
 
-#work > article > div > img {
+.section-content > article > div > img {
     width: 40px;
 }
 
-#work > article > div > p {
+.section-content > article > div > p {
     text-align: start;
     margin:0;
     /*border: #0C0C0C solid;*/
 }
 
-#work > article > span {
+.animation::after {
+
+}
+
+.animation {
+
+}
+
+
+
+
+.section-content > article > span {
+    /*border: #ED4385 solid;*/
     flex-basis: 700px;
+    display: flex;
+    justify-content: end;
+
     flex-grow: 0;
     flex-shrink: 1;
 }
 
-#work > article > span > img {
-    width: 100%;
+.section-content > article > span > img {
+    width: 75%;
     box-shadow: 0px 15px 15px  rgba(0, 0, 0, 0.25);
 
 }
 
-#work >article:nth-child(even) {
+.section-content >article:nth-child(even) > span {
+    justify-content: start;
+}
+
+.section-content >article:nth-child(even) {
     flex-direction: row-reverse;
 }
 /* --------------- 4.4 Services ------------------- */
 #services{
+    position: relative;
     display: flex;
     flex-direction:  column;
     padding: 40px;
@@ -271,8 +357,6 @@ header>img {
     margin: 10px;
     padding: 10px;
     box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.20);
-
-
 }
 
 #services > .row > article > img {
@@ -285,7 +369,11 @@ header>img {
 
 /* --------------- 4.3 Form ------------------- */
 #form {
-    background: linear-gradient(-45deg, var(--paars), var(--blauw));
+    /*border: #ED4385 solid;*/
+    position: relative;
+    background: linear-gradient(-45deg, var(--paars), var(--blauw)), url(./assets/noise-texture.png);
+    background-blend-mode: color;
+
     color: var(--licht-grijs) ;
     display: flex;
     flex-direction: row;
@@ -331,7 +419,18 @@ header>img {
 
 }
 
-/* ------------------------------- 5. Media Queries -------------------------------- */
-@media screen and (min-width: 576px) {
-    
+
+
 }
+/* ------------------------------- 5. Media Queries -------------------------------- */
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+
+
