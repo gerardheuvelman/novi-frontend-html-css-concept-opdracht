@@ -1,3 +1,15 @@
+
+/*IMPORTS*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
+@media screen and (max-width: 575px) {
+/*  TO DO  */
+}
+
+/*DE MEDIA QUERY VOO MOBIEL STAAT HIERBOVEN. ZODRA IK KLAAR BEN MET DIT ONTWWERP DAN VERPLAATS IK ALLES WAT BLIJFT GELDEN VOOR DE MOBIELE VERSIE NAAR DE BOVENSTAANDE MEDIA_QUERY.*/
+@media screen and (min-width: 576px) {
+
+
 /*////////////////////////
     Table of Contents
     0. CSS Reset
@@ -20,48 +32,402 @@
 }
 /* ------------------------------- 1. Global Styles -------------------------------- */
 body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     background-color: white;
+}
+header {
+    color: var(--licht-grijs);
+    background: linear-gradient(-45deg, var(--paars), var(--blauw)), url(./assets/noise-texture.png);
+    background-blend-mode: color;
+
+}
+main {
+    color: var(--zwart);
+}
+footer {
+    background-color: var(--zwart);
+    color: var(--licht-grijs);
+}
+
+button {
+    background-color: var(--roze);
+    color:  var(--licht-grijs);
+    border: none;
+    height: 50px;
+    width: fit-content;
+    padding: 0 60px 0 60px;
+    border-radius: 25px;
+    box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.50);
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+h1, h2, h3, h4,h5,h6 {
+    font-family: Merriweather, serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p, a, a:link, a:visited, li, label, textarea {
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+    /*z-index: 0;*/
+}
+
+ul {
+    list-style: none
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+/* --------------- 3.1 Reusables ----------------------- */
+:root {
+    --paars: rgba(87,34,205,1);
+    --blauw:  rgba(75,73,232,1);
+    --roze: #ED4385;
+    --zwart:  #0C0C0C ;
+    --licht-paars: #F2F0FF;
+    --licht-grijs: #F3F6F9;
+    --grijs:  #7A7A7A;
+    --page-width: 1200px;
+}
+
+.slanted-mask-top, .slanted-mask-bottom {
+    /*border: #ED4385 solid;*/
+    position: absolute;
+    width: var(--page-width);
+    left: 0;
+}
+
+.slanted-mask-top {
+    border-top: 50px solid white;
+    border-left: var(--page-width) solid transparent; /* THIS NEEDS TO CHANGE!!!*/
+    top: 0;
+}
+
+.slanted-mask-bottom {
+    border-bottom: 50px solid white;
+    border-right: var(--page-width) solid transparent; /* THIS NEEDS TO CHANGE!!!*/
+    bottom: 0;
+}
+
+.white-text-in-background, .gray-text-in-background { /* CAN ALSO BE IMPLEMENTED AS A PDEUSO ELEMENT */
+    /*border: #ED4385 solid;*/
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0px;
+    top:0px;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-size: 400px;
+    overflow:hidden;
+}
+
+.white-text-in-background {
+    color: white;
+}
+
+.gray-text-in-background {
+    color: var(--licht-grijs);
+}
+
+/* --------------- 3.2 Other --------------------------- */
+body {
+    display: flex;
+    justify-content: center;
 }
 .main-container {
     display: flex;
     flex-direction: column;
-    flex-basis: 1200px;
-}
-header {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 1200px;
-    background-color: forestgreen;
-
+    flex-basis: var(--page-width);
+    padding: 0px 10px 0px 10px;
 }
 main {
     display: flex;
     flex-direction: column;
-    background-color: orange;
-
 }
 
 footer {
     display: flex;
-    flex-direction: column;
-    background-color: darkgreen;
-
+    flex-direction: row;
+    justify-content: center;
 }
-/* ------------------------------- 2. Typography ----------------------------------- */
-
-/* ------------------------------- 3. Layout --------------------------------------- */
-
-/* --------------- 3.1 Reusables ----------------------- */
-
-/* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
-/* --------------- 4.2 Introduction ------------------- */
+header {
+    /*border: #ED4385 solid;*/
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
+nav {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding-right: 10px;
+}
+
+nav>p {
+    /*border: #ED4385 solid;*/
+    margin-left: 10px;
+}
+
+nav>ul {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    flex-basis: 300px;
+    justify-content: space-between;
+}
+ .navbar {
+     color: white;
+ }
+
+header>div {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+}
+
+header>div>div {
+    /*border: #ED4385 solid;*/
+    flex-basis: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-top: 30px;
+}
+
+header>div>div> h1, p {
+    text-align: center;
+}
+
+header>div>div>p {
+    font-size: 18px;
+}
+
+header>img {
+    /*border: #ED4385 solid;*/
+
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+#hello  {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#hello>div {
+    flex-basis: 700px;
+}
+#hello>div> h2, p {
+    text-align: center;
+    margin: 20px;
+}
+#hello>div>h2 {
+    color: var(--paars);
+}
+
+#hello>div>p {
+    margin: 70px;
+}
+
+
+/* --------------- 4.3 Work ------------------- */
+.work {
+    /*border: #ED4385 solid;*/
+    position:relative;
+    padding: 150px 10px 150px 10px;
+    background-color: var(--licht-grijs);
+    z-index: -2;
+}
+
+.section-content {
+    /*z-index: 0;*/
+}
+
+.section-content > article {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.section-content > article > div {
+    /*border: #ED4385 solid;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    /*border: #ED4385 solid;*/
+    flex-basis: 325px;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+}
+
+.section-content > article > div > img {
+    width: 40px;
+}
+
+.section-content > article > div > p {
+    text-align: start;
+    margin:0;
+    /*border: #0C0C0C solid;*/
+}
+
+.animation::after {
+
+}
+
+.animation {
+
+}
+
+
+
+
+.section-content > article > span {
+    /*border: #ED4385 solid;*/
+    flex-basis: 700px;
+    display: flex;
+    justify-content: end;
+
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.section-content > article > span > img {
+    width: 75%;
+    box-shadow: 0px 15px 15px  rgba(0, 0, 0, 0.25);
+
+}
+
+.section-content >article:nth-child(even) > span {
+    justify-content: start;
+}
+
+.section-content >article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+/* --------------- 4.4 Services ------------------- */
+#services{
+    position: relative;
+    display: flex;
+    flex-direction:  column;
+    padding: 40px;
+}
+
+#services > .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#services > .row > article {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    border: var(--paars) solid 1px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.20);
+}
+
+#services > .row > article > img {
+    height: 50px;
+}
+
+#services > .row > article > h4 {
+    color: var(--paars);
+}
+
+/* --------------- 4.3 Form ------------------- */
+#form {
+    /*border: #ED4385 solid;*/
+    position: relative;
+    background: linear-gradient(-45deg, var(--paars), var(--blauw)), url(./assets/noise-texture.png);
+    background-blend-mode: color;
+
+    color: var(--licht-grijs) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#form > div {
+    display: flex;
+    /*border: black solid;*/
+    flex-direction: column;
+    flex-basis: 600px;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+#form > div > form {
+    display: flex;
+    /*border: green solid;*/
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#form > div >form > label {
+    display: flex;
+    /*border: yellow solid;*/
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    margin: 10px;
+}
+
+#form > div > form > label > input, textarea {
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#form > div > form > label >textarea {
+    height: 250px;
+
+}
+#form > div > form > label > input::placeholder {
+
+}
+
+
+
+}
 /* ------------------------------- 5. Media Queries -------------------------------- */
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+/*==================================================================================================================*/
+
+
